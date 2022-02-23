@@ -1,49 +1,136 @@
-# Tourism App 🏔️🌄🏖️
+<p align="center">
+    <img width="250px" src="https://user-images.githubusercontent.com/50701501/104827248-f88a1800-585b-11eb-985e-5e31dbb0b913.jpg"><br/>
+</p>
+<p align="center">
+  <a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="Maintained with Lerna"></a>
+  <a href="/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
+</p>
 
-## Our Goal
+# Overview
 
-The objective of this Project is to look at how we can customise Flutter Widgets to achieve our own interactive user interface designs and integrate them with Firebase database and activating the user registration and authentication system. If you have a designer on board, no matter how unconventional their designs are, we can create them using Flutter.
+**TEN stack** is a `Typescript` + `Express` + `Node` starter kit to develop `REST API` server apps.
+Nothing new under the sun, just a straight forward combo to make server development a little bit faster. And of course, this make my freelancing days more enjoyable 😎
+Comes with:
 
+- Everything typed with [Typescript](https://www.typescriptlang.org/)
+- [ES6](http://babeljs.io/learn-es2015/) features/modules
+- ES7 [async](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) / [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- Run with [Nodemon](https://nodemon.io/) for automatic reload & watch
+- [ESLint](http://eslint.org/) for code linting
+- Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
+- Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
+- Improved commits with [Husky](https://typicode.github.io/husky)
+- Manage production app proccess with [PM2](https://pm2.keymetrics.io/)
 
-## What we will create
+  <br>
+  <br>
 
-We’re going to make a prototype of a Tourism App inspired from a design on Dribble. It will be a multi screen app with navigation between pages with Firebase activated in it for user registration and authentication and data storage.
+---
 
-## What we will learn
+## Prerequisites
 
-- How to use Firebase and integrate with the app.
-- How to use the Firebase user registration and authentication feature.
-- How to use the Firebase data storage feature.
-- How to use Flutter themes to create coherent branding. 
-- How to create multi-page apps using Flutter Routes and Navigator.
-- How to extract and refactor Flutter Widgets with a click of the button. 
-- How to pass functions as parameters and fields.
-- How to use the GestureDetector Widget to detect more than just a tap.
-- How to use custom colour palettes by using hex codes.
-- How to customise Flutter Widgets to achieve a specific design style.
-- Learn about composition vs. inheritance and the Flutter way of creating custom UI.
-- Understand the difference between const and final in Dart and when to use each.
+- [Node.js](https://nodejs.org) (`>= 12.0.0`)
+- [Yarn](https://yarnpkg.com/en/docs/install) or [NPM](https://docs.npmjs.com/getting-started/installing-node)
 
-## Difficulties faced
+## Install
 
-- In handling multiple screens.
-- Customizing the Flutter Widgets and achieving the specific design.
-- Integrating the Firebase with the App.
+- Fork or Use [this](https://github.com/filoscoder/tenstack-starter/generate) template repository.
+- [Clone](https://github.com/git-guides/git-clone) the forked repository.
+- Install the dependencies with [yarn](https://yarnpkg.com/getting-started/usage) or [npm](https://docs.npmjs.com/cli/v7/commands/npm-install).
 
-## Conclusion
+> Make sure you already have [`node.js`](https://github.com/filoscoder/tenstack-starter#prerequisites) and [`npm`](https://github.com/filoscoder/tenstack-starter#prerequisites) or [`yarn`](https://github.com/filoscoder/tenstack-starter#prerequisites) installed in your system.
 
-- Had great fun in building the app. Learned a lot of new things while designing the UI. Learned about new methods, technologies, widgets and implemented them successfully.
+- Set your `git remote add origin` path
 
-## Few Screenshots of the App(Till Date)
+```bash
+ git remote add origin ${forked-and-cloned-path}
+```
 
-![1](https://user-images.githubusercontent.com/84225151/145626895-bc36b853-dfc4-4bf9-82fb-d5442cccbf65.jpeg)
+> [Update the url](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) if you already have an `origin`
 
-![2](https://user-images.githubusercontent.com/84225151/145626932-f5771cba-182a-4df9-9e4f-faae082ea883.jpeg)
+<br>
+<br>
 
-![3](https://user-images.githubusercontent.com/84225151/145626968-e5e3bc94-1641-4cc4-aaa4-48802c01222c.jpeg)
+## Config
 
-![4](https://user-images.githubusercontent.com/84225151/145626998-43c4a74a-e458-4f3c-91b1-39517699a9cd.jpeg)
+- Copy `.env.example` a file at the root of the application.
+- Add or modify specific variables and update it according to your need.
 
-![5](https://user-images.githubusercontent.com/84225151/145627009-ed1f0fd4-5c58-41f4-8f3d-b46cd020c928.jpeg)
+```bash
+ cp .env.example .env
+```
 
-![6](https://user-images.githubusercontent.com/84225151/145627044-b6f98dda-43d3-4d20-ad06-f0274546a65b.jpeg)
+> Check the `config` folder to customize your settings (`/src/config`)
+
+<br>
+<br>
+
+## Alias @
+
+To make paths clean and ease to access `@` is setup up for `/src` path
+
+```javascript
+// BEFORE
+import config from './config';
+import routes from './routes';
+
+// NOW
+import config from '@/config';
+import routes from '@/routes';
+```
+
+> You can customize this setup:
+> `/tsconfig.json` > compilerOptions.paths
+> `/eslintrc.yml` > rules.settings.alias.map
+
+<br>
+<br>
+
+## Local Development
+
+Run the server locally. It will be run with Nodemon and ready to serve on port `8080` (unless you specify it on your `.env`)
+
+```bash
+ yarn start # or npm start
+```
+
+> Check [`package.json`](https://github.com/filoscoder/tenstack-starter/blob/master/package.json) to see more "scripts"
+
+<br>
+<br>
+
+## Production
+
+First, build the application.
+
+```bash
+ yarn build # or npm run build
+```
+
+Then, use [`pm2`](https://github.com/Unitech/pm2) to start the application as a service.
+
+```bash
+ yarn service:start # or npm run service:start
+```
+
+<br>
+<br>
+
+# Contribution
+
+This repository will be managed as an `open-source`. <br>
+Please feel free to open an `issue` or a `pull request` to suggest changes or additions.
+
+# Support & Contact
+
+If you have any question or suggestion, don't hesitate to contact me:
+
+✉️ [filoscoder.io@gmail.com](mailto:filoscoder.io@gmail.com)
+
+🎧 I was listening [this](https://www.youtube.com/watch?v=_H8ku3APY40) playlist to boost my productivity!
+
+# Author & Credits
+
+<a src="https://github.com/filoscoder">
+<img width="60px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/filoscoder">
+</a>
