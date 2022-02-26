@@ -8,8 +8,8 @@ import * as userService from '@/service/user';
  * @param {Request} req
  * @param {Response} res
  */
-export const getUserInfo = (req: Request, res: Response) => {
-    const result = userService.getUserInfo();
+export const getUserInfo = async (req: Request, res: Response) => {
+    const result = await userService.getUserInfo();
 
     res.json(result);
 };

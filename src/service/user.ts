@@ -1,8 +1,7 @@
-import { getConnection } from '@/database/connector';
+import { connectDatabase } from '@/database/connector';
+
 export const getUserInfo = async () => {
-    const db = await getConnection();
-    console.log('db', db);
-    const users = db!.execute('SELECT * FROM `User`');
-    console.log(users);
-    return users;
+    const db = await connectDatabase();
+    const [rows] = await db.execute('SELECT * FROM `User`');
+    return rows;
 };
