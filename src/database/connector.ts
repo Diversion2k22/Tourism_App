@@ -1,8 +1,9 @@
 import CONFIG from '@/config';
 import mysql from 'mysql2';
 
+let db: mysql.Connection | undefined = undefined;
 export const connectDatabase = async () => {
-  const db = mysql.createConnection({
+  db = mysql.createConnection({
     host: CONFIG.DB.HOST,
     user: CONFIG.DB.USER,
     password: CONFIG.DB.PASSWORD,
@@ -19,3 +20,5 @@ export const connectDatabase = async () => {
   }
   else console.log('Database Not Connected !');
 };
+
+export default db;
