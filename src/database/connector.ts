@@ -1,10 +1,9 @@
 import CONFIG from '@/config';
-import mysql from 'mysql2';
+import mysql from 'mysql2/promise';
 
-let db: mysql.Connection | undefined = undefined;
-export const connectDatabase = async () => {
+export const getConnection = async () => {
     try {
-        db = mysql.createConnection({
+        const db = await mysql.createConnection({
             host: CONFIG.DB.HOST,
             user: CONFIG.DB.USER,
             password: CONFIG.DB.PASSWORD,
@@ -15,11 +14,10 @@ export const connectDatabase = async () => {
             decimalNumbers: true,
             // debug: true,
         });
-        if (db) console.log('Database Connected !');
-        else console.log('Database Not Connected !');
+        console.log('Database connected');
+        return db;
     } catch (error) {
+        console.log('Database not connected');
         console.log(error);
     }
 };
-
-export default db;

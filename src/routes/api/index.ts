@@ -1,7 +1,8 @@
 import { Router } from 'express';
+import { getUserInfo } from '@/controller/user';
 
 const router = Router();
 
-router.post('/render');
+router.get('/user', getUserInfo);
 
 export default router;
