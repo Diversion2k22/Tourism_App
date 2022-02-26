@@ -23,7 +23,7 @@ const CONFIG = {
         USER: process.env.DB_USER || 'root',
         PASSWORD: process.env.DB_PASSWORD || '',
         PORT: Number(process.env.DB_PORT) || 3306,
-        DATABASE: process.env.DB_DATABASE || 'travelr',
+        NAME: process.env.DB_NAME || 'travelr',
     },
     AUTH: {
         SALT_ROUNDS: process.env.SALT_ROUNDS || '11',

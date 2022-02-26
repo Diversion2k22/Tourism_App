@@ -13,7 +13,9 @@ export const startServer = (app: express.Application): Server => {
         );
         process.stdout.write('📚 Debug logs are ENABLED\n');
         process.stdout.write(
-            `🚀 TRISETRA-RENDERING-PIPELINE-API Server is ready at http://${CONFIG.APP.HOST}:${CONFIG.APP.PORT}\n`,
+            `🚀 ${CONFIG.APP.NAME.toUpperCase()} Server is ready at http://${
+                CONFIG.APP.HOST
+            }:${CONFIG.APP.PORT}\n`,
         );
     });
 };

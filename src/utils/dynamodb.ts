@@ -16,5 +16,4 @@ export const PartiQL = async (query: string, values: any) => {
     return data;
 };
 
-export abstract class Tables {
-}
+export abstract class Tables {}
