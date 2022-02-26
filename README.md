@@ -1,16 +1,8 @@
-<p align="center">
-    <img width="250px" src="https://user-images.githubusercontent.com/50701501/104827248-f88a1800-585b-11eb-985e-5e31dbb0b913.jpg"><br/>
-</p>
-<p align="center">
-  <a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg" alt="Maintained with Lerna"></a>
-  <a href="/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License"></a>
-</p>
+# TravelR - A travel planning application
 
-# Overview
+## Description
 
-**TEN stack** is a `Typescript` + `Express` + `Node` starter kit to develop `REST API` server apps.
-Nothing new under the sun, just a straight forward combo to make server development a little bit faster. And of course, this make my freelancing days more enjoyable 😎
-Comes with:
+## Tech stack
 
 - Everything typed with [Typescript](https://www.typescriptlang.org/)
 - [ES6](http://babeljs.io/learn-es2015/) features/modules
@@ -20,25 +12,22 @@ Comes with:
 - Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
 - Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
 - Improved commits with [Husky](https://typicode.github.io/husky)
-- Manage production app proccess with [PM2](https://pm2.keymetrics.io/)
-
-  <br>
-  <br>
+- Manage production app process with [PM2](https://pm2.keymetrics.io/)
 
 ---
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org) (`>= 12.0.0`)
+- [Node.js](https://nodejs.org) (`>= 14.0.0`)
 - [Yarn](https://yarnpkg.com/en/docs/install) or [NPM](https://docs.npmjs.com/getting-started/installing-node)
 
 ## Install
 
-- Fork or Use [this](https://github.com/filoscoder/tenstack-starter/generate) template repository.
+- Fork or Use [this](https://github.com/Diversion2k22/TravelR/generate) template repository.
 - [Clone](https://github.com/git-guides/git-clone) the forked repository.
 - Install the dependencies with [yarn](https://yarnpkg.com/getting-started/usage) or [npm](https://docs.npmjs.com/cli/v7/commands/npm-install).
 
-> Make sure you already have [`node.js`](https://github.com/filoscoder/tenstack-starter#prerequisites) and [`npm`](https://github.com/filoscoder/tenstack-starter#prerequisites) or [`yarn`](https://github.com/filoscoder/tenstack-starter#prerequisites) installed in your system.
+> Make sure you already have [`node.js`](https://github.com/Diversion2k22/TravelR#prerequisites) and [`npm`](https://github.com/Diversion2k22/TravelR#prerequisites) or [`yarn`](https://github.com/Diversion2k22/TravelR#prerequisites) installed in your system.
 
 - Set your `git remote add origin` path
 
@@ -48,22 +37,11 @@ Comes with:
 
 > [Update the url](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url) if you already have an `origin`
 
-<br>
-<br>
-
 ## Config
 
-- Copy `.env.example` a file at the root of the application.
-- Add or modify specific variables and update it according to your need.
-
-```bash
- cp .env.example .env
-```
+- Add or modify specific variables and update `.env` according to your need.
 
 > Check the `config` folder to customize your settings (`/src/config`)
-
-<br>
-<br>
 
 ## Alias @
 
@@ -83,9 +61,6 @@ import routes from '@/routes';
 > `/tsconfig.json` > compilerOptions.paths
 > `/eslintrc.yml` > rules.settings.alias.map
 
-<br>
-<br>
-
 ## Local Development
 
 Run the server locally. It will be run with Nodemon and ready to serve on port `8080` (unless you specify it on your `.env`)
@@ -94,10 +69,7 @@ Run the server locally. It will be run with Nodemon and ready to serve on port `
  yarn start # or npm start
 ```
 
-> Check [`package.json`](https://github.com/filoscoder/tenstack-starter/blob/master/package.json) to see more "scripts"
-
-<br>
-<br>
+> Check [`package.json`](https://github.com/Diversion2k22/TravelR/blob/main/package.json) to see more "scripts"
 
 ## Production
 
@@ -113,24 +85,19 @@ Then, use [`pm2`](https://github.com/Unitech/pm2) to start the application as a 
  yarn service:start # or npm run service:start
 ```
 
-<br>
-<br>
+## Author
 
-# Contribution
-
-This repository will be managed as an `open-source`. <br>
-Please feel free to open an `issue` or a `pull request` to suggest changes or additions.
-
-# Support & Contact
-
-If you have any question or suggestion, don't hesitate to contact me:
-
-✉️ [filoscoder.io@gmail.com](mailto:filoscoder.io@gmail.com)
-
-🎧 I was listening [this](https://www.youtube.com/watch?v=_H8ku3APY40) playlist to boost my productivity!
-
-# Author & Credits
-
-<a src="https://github.com/filoscoder">
-<img width="60px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/filoscoder">
+<a src="https://github.com/subho57">
+<img width="60px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/subho57">
 </a>
+<a src="https://github.com/Prerona-Mazumder">
+<img width="60px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/Prerona-Mazumder">
+</a>
+<a src="https://github.com/Rijurik">
+<img width="60px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/Rijurik">
+</a>
+
+## Testing
+
+- Make sure you have `redis-server` running on your localhost with port 6379
+- Test the server by using curl to send a post request to <http://localhost:8080/api/render>

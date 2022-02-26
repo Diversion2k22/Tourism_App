@@ -1,9 +1,9 @@
 /**
- * Application Information response strucuture.
+ * Application Information response structure.
  */
 interface AppInformation {
-  NAME: string;
-  VERSION: string;
+    NAME: string;
+    VERSION: string;
 }
 
 export default AppInformation;

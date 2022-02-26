@@ -14,11 +14,7 @@ rules:
   no-multi-spaces: 2
   no-unexpected-multiline: 2
   no-multiple-empty-lines: [2, { max: 1, maxEOF: 1 }]
-  valid-jsdoc: [1, {
-    requireReturn: false,
-    requireParamDescription: false,
-    requireReturnDescription: false
-  }]
+  valid-jsdoc: [1, { requireReturn: false, requireParamDescription: false, requireReturnDescription: false }]
   require-jsdoc: 1
   key-spacing: 2
   semi-spacing: 2

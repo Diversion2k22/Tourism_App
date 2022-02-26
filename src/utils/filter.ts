@@ -5,27 +5,27 @@
  * @returns {*}
  */
 export const emptyToNull = (obj: any): any => {
-  if (isScalarType(obj)) {
-    return obj;
-  }
-
-  if (Array.isArray(obj)) {
-    return obj.map(emptyToNull);
-  }
-
-  const result: any = {};
-
-  for (const key of Object.keys(obj)) {
-    const value = obj[key];
-
-    if (typeof value === 'object') {
-      result[key] = emptyToNull(value);
-    } else {
-      result[key] = nullIfEmpty(value);
+    if (isScalarType(obj)) {
+        return obj;
     }
-  }
 
-  return result;
+    if (Array.isArray(obj)) {
+        return obj.map(emptyToNull);
+    }
+
+    const result: any = {};
+
+    for (const key of Object.keys(obj)) {
+        const value = obj[key];
+
+        if (typeof value === 'object') {
+            result[key] = emptyToNull(value);
+        } else {
+            result[key] = nullIfEmpty(value);
+        }
+    }
+
+    return result;
 };
 
 /**
@@ -35,13 +35,13 @@ export const emptyToNull = (obj: any): any => {
  * @returns {boolean}
  */
 const isScalarType = (obj: any) => {
-  return (
-    typeof obj !== 'object' ||
-    obj instanceof String ||
-    obj instanceof Number ||
-    obj instanceof Boolean ||
-    obj === null
-  );
+    return (
+        typeof obj !== 'object' ||
+        obj instanceof String ||
+        obj instanceof Number ||
+        obj instanceof Boolean ||
+        obj === null
+    );
 };
 
 /**
@@ -51,9 +51,9 @@ const isScalarType = (obj: any) => {
  * @returns {*}
  */
 const nullIfEmpty = (value: any) => {
-  if (typeof value !== 'string') {
-    return value;
-  }
+    if (typeof value !== 'string') {
+        return value;
+    }
 
-  return value.trim() === '' ? null : value;
+    return value.trim() === '' ? null : value;
 };

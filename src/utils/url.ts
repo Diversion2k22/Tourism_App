@@ -8,9 +8,9 @@ import url from 'url';
  * @returns {string}
  */
 export const getFullUrl = (req: Request) => {
-  return url.format({
-    protocol: req.protocol,
-    host: req.get('host'),
-    pathname: req.baseUrl + req.path,
-  });
+    return url.format({
+        protocol: req.protocol,
+        host: req.get('host'),
+        pathname: req.baseUrl + req.path,
+    });
 };

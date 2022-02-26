@@ -1,5 +1,5 @@
-import AppInformation from '@/types/response/AppInformation';
 import CONFIG from '@/config';
+import AppInformation from '@/types/response/AppInformation';
 
 /**
  * Get application information.
@@ -7,5 +7,5 @@ import CONFIG from '@/config';
  * @returns {AppInformation}
  */
 export const getAppInfo = (): AppInformation => {
-  return CONFIG.APP;
+    return CONFIG.APP;
 };
