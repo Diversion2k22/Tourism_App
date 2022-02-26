@@ -18,6 +18,13 @@ const CONFIG = {
         LEVEL: process.env.LOGGING_LEVEL || 'info',
         MAX_FILES: process.env.LOGGING_MAX_FILES || 5,
     },
+    DB: {
+        HOST: process.env.DB_HOST || 'localhost',
+        USER: process.env.DB_USER || 'root',
+        PASSWORD: process.env.DB_PASSWORD || '',
+        PORT: Number(process.env.DB_PORT) || 3306,
+        DATABASE: process.env.DB_DATABASE || 'travelr',
+    },
     AUTH: {
         SALT_ROUNDS: process.env.SALT_ROUNDS || '11',
         ACCESS_TOKEN_EXPIRE: process.env.ACCESS_TOKEN_DURATION || '300000',
