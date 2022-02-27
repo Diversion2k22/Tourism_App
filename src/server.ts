@@ -1,6 +1,7 @@
-import { createWorker } from 'celery-node';
 import * as express from 'express';
+import { createWorker } from 'celery-node';
 import { createServer, Server } from 'http';
+import admin from 'firebase-admin';
 
 import CONFIG from '@/config';
 
@@ -27,4 +28,12 @@ export const registerWorker = (): void => {
     );
 
     celeryWorker.start();
+};
+
+export const initializeFirebase = (): void => {
+    admin.initializeApp({
+        credential: admin.credential.cert(CONFIG.FIREBASE_CREDENTIALS),
+        databaseURL: CONFIG.FIREBASE_DATABASE_URL,
+    });
+    console.log("🔥 Firebase Initialized!");
 };

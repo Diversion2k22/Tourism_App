@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 
 import * as errorHandler from '@/middlewares/errorHandler';
-import { authenticate } from '@/middlewares/cognitoAuth';
+import { authenticate } from '@/middlewares/firebaseAuth';
 import routes from '@/routes';
 import api from '@/routes/api';
 
@@ -30,7 +30,7 @@ export const createApp = (): express.Application => {
 
     // API Routes
     app.use('/', routes);
-    app.use('/api', api);
+    app.use('/api', authenticate, api);
 
     // Error Middleware
     app.use(errorHandler.genericErrorHandler);

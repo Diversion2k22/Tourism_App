@@ -2,8 +2,6 @@ import express from 'express';
 const CognitoExpress = require('cognito-express');
 import CONFIG from '../config';
 
-const authenticatedRoute = express.Router();
-
 //Our middleware that authenticates all APIs under our 'authenticatedRoute' Router
 export const authenticate = (
     req: express.Request,
@@ -25,10 +23,6 @@ export const authenticate = (
     if (!accessTokenFromClient)
         return res.status(401).send('Access Token missing from header');
 
-    if (req.body['prod']) {
-        cognitoParams.cognitoUserPoolId = CONFIG.AWS.COGNITO.USER_POOL_ID.PROD;
-    }
-    // console.log(req.body);
     //Initializing CognitoExpress constructor
     const cognitoExpress = new CognitoExpress(cognitoParams);
     cognitoExpress.validate(
