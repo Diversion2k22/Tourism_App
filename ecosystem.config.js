@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'triser',
+      name: 'travelr',
       script: 'dist/src/index.js',
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
       exec_mode: 'cluster',
@@ -32,7 +32,7 @@ module.exports = {
       host: process.env.EC2_HOST,
       user: 'ubuntu',
       ref: 'origin/main',
-      repo: 'git@github.com:Diversion2k22/travelr',
+      repo: 'git@github.com:Diversion2k22/TravelR',
       path: '/home/ubuntu',
       'post-deploy':
         'yarn && yarn clean && yarn build && pm2 startOrRestart ecosystem.config.js --env production && pm2 set pm2:autodump true && pm2 save',
