@@ -35,5 +35,5 @@ export const initializeFirebase = (): void => {
         credential: admin.credential.cert(CONFIG.FIREBASE_CREDENTIALS),
         databaseURL: CONFIG.FIREBASE_DATABASE_URL,
     });
-    console.log("🔥 Firebase Initialized!");
+    console.log('🔥 Firebase Initialized!');
 };

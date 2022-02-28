@@ -10,10 +10,7 @@ export const authenticate = (
 
     //Fail if token not present in header.
     if (!idToken) return res.status(401).json({ message: 'Unauthorized' });
-    admin
-        .auth()
-        .verifyIdToken(idToken)
-        .then((userDetails) => {
+    admin.auth().verifyIdToken(idToken).then((userDetails) => {
             req.body['auth'] = userDetails;
             next();
         })
