@@ -30,12 +30,10 @@ export const createUser = async (req: Request, res: Response) => {
         }
         // check for valid phone number
         if (!/^\d{10}$/.test(phone_number)) {
-            return res
-                .status(400)
-                .json({
-                    is_successful: false,
-                    message: 'Invalid Phone Number',
-                });
+            return res.status(400).json({
+                is_successful: false,
+                message: 'Invalid Phone Number',
+            });
         }
         const db = await connectDatabase();
         const query = `INSERT INTO users (user_id, name, email, phone_number) VALUES (?,?,?,?)`;
