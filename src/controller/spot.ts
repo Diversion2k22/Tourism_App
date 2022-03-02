@@ -10,10 +10,12 @@ import { connectDatabase } from '@/database/connector';
 export const getSpot = async (req: Request, res: Response) => {
     try {
         const db = await connectDatabase();
-        const query = `SELECT * FROM travelr_spot`;
+        const query = `SELECT * FROM spots`;
         const [result] = await db.execute(query);
         return res.json({ is_successful: true, spots: result });
     } catch (err) {
-        return res.status(500).json({ is_successful: false, message: err.message });
+        return res
+            .status(500)
+            .json({ is_successful: false, message: err.message });
     }
 };

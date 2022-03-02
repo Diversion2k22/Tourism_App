@@ -30,7 +30,7 @@ export const createApp = (): express.Application => {
 
     // API Routes
     app.use('/', routes);
-    app.use('/api', authenticate, api);
+    app.use('/api', api);
 
     // Error Middleware
     app.use(errorHandler.genericErrorHandler);
