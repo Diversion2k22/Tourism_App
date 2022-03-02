@@ -9,6 +9,6 @@ const router = Router();
 router.get('/user', getUserInfo);
 router.get('/city', getCity);
 router.get('/spot', getSpot);
-router.get('/event', getSpot);
+router.get('/event', getEvent);
 
 export default router;
